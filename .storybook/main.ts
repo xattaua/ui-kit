@@ -26,9 +26,10 @@ module.exports = {
         allowSyntheticDefaultImports: false,
         esModuleInterop: false,
       },
-      propFilter: {
-        skipPropsWithoutDoc: true,
-      },
+      propFilter: () => true,
+      // propFilter: {
+      //   skipPropsWithoutDoc: true,
+      // },
     },
   },
   // staticDirs: ['../public'],

@@ -11,7 +11,13 @@
     "type": "git",
     "url": "git+https://github.com/xattaua/ui-kit.git"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "ui-kit",
+    "storybook",
+    "design-system",
+    "components"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -20,8 +26,8 @@
   "homepage": "https://github.com/xattaua/ui-kit#readme",
   "devDependencies": {
     "@babel/core": "^7.18.0",
-    "@babel/preset-react": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
     "@storybook/addon-essentials": "^7.6.17",
     "@storybook/addon-interactions": "^7.6.17",
     "@storybook/addon-links": "^7.6.17",
@@ -30,11 +36,8 @@
     "@storybook/react": "^7.6.17",
     "@storybook/react-webpack5": "^7.6.17",
     "@storybook/test": "^7.6.17",
-    "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "storybook": "^7.6.17",
     "@types/react": "^17.0.37",
+    "@types/styled-components": "^5.1.34",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "babel-loader": "^8.2.5",
@@ -49,14 +52,20 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-storybook": "^0.5.12",
     "prettier": "^2.2.1",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.6.17",
     "typescript": "^4.5.0"
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "5.3.x"
   },
   "peerDependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "5.3.x"
   }
 }
