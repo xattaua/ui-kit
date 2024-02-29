@@ -5,6 +5,9 @@ on:
     branches:
       - master
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
@@ -28,6 +31,6 @@ jobs:
 
       - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.1
         with:
-          install_command: npm install # default: npm ci
+          install_command: npm ci
           build_command: npm run build-storybook
           path: storybook-static
