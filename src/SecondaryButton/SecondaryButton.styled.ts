@@ -13,6 +13,8 @@ const getVariant = (variant: SecondaryButtonProps['variant']) => {
       return 'red';
     case 'success':
       return 'green';
+    case 'neutral':
+      return 'gray';
     default:
       return 'purple';
   }
@@ -22,46 +24,49 @@ const StyledSecondaryButton = styled(BaseButton)<SecondaryButtonProps>(({ size, 
   const color = getVariant(variant);
 
   return {
-    color: colors.white,
-    backgroundColor: colors[color][600],
-    transition: `all ${transitions.standard}`,
+    color: colors[color][700],
+    backgroundColor: colors[color][50],
+    transition: `all ${transitions.defaultTransition}`,
 
     '&:hover:not(:focus):enabled': {
-      color: colors.white,
-      backgroundColor: colors[color][700],
+      color: colors[color][700],
+      backgroundColor: colors[color][100],
     },
 
     '&:active:not(:disabled)': {
-      color: colors.white,
-      backgroundColor: colors[color][600],
+      color: colors[color][700],
+      backgroundColor: colors[color][50],
       transform: 'scale(0.98)',
       boxShadow: `0px 0px 0px 4px ${colors[color][100]}`,
     },
 
     '&:focus:not(:active):not(:disabled)': {
-      border: `1px solid ${colors[color][400]}`,
+      border: `1px solid ${colors[color][100]}`,
     },
 
     '&:disabled': {
-      color: colors.white,
-      backgroundColor: colors[color][200],
+      color: colors[color][300],
+      backgroundColor: colors[color][25],
     },
 
     ...(size === 'sm' && {
       minHeight: '32px',
       font: typography.body3,
+      fontWeight: 500,
       padding: `${spacings.sp1} ${spacings.sp2}`,
     }),
 
     ...(size === 'md' && {
       minHeight: '38px',
       font: typography.body2,
+      fontWeight: 500,
       padding: `${spacings.sp2} ${spacings.sp4}`,
     }),
 
     ...(size === 'lg' && {
       minHeight: '44px',
       font: typography.body1,
+      fontWeight: 500,
       padding: `${spacings.sp2} ${spacings.sp5}`,
     }),
   };

@@ -4,7 +4,7 @@ import { BaseButtonProps } from 'BaseButton';
 import { StyledSecondaryButton, StyledLeading, StyledTrailing } from './SecondaryButton.styled';
 
 export type SecondaryButtonSize = 'sm' | 'md' | 'lg';
-export type SecondaryButtonVariant = 'default' | 'danger' | 'success';
+export type SecondaryButtonVariant = 'default' | 'danger' | 'success' | 'neutral';
 
 export type SecondaryButtonProps = Omit<BaseButtonProps, 'style'> & {
   size?: SecondaryButtonSize;
