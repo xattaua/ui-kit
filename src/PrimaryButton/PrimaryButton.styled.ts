@@ -58,12 +58,6 @@ const StyledPrimaryButton = styled(BaseButton)<PrimaryButtonProps>(({ size, vari
       font: typography.body2,
       padding: `${spacings.sp2} ${spacings.sp4}`,
     }),
-
-    ...(size === 'lg' && {
-      minHeight: '44px',
-      font: typography.body1,
-      padding: `${spacings.sp2} ${spacings.sp5}`,
-    }),
   };
 });
 

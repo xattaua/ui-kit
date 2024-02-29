@@ -3,7 +3,7 @@ import React, { ReactElement } from 'react';
 import { BaseButtonProps } from 'BaseButton';
 import { StyledPrimaryButton, StyledLeading, StyledTrailing } from './PrimaryButton.styled';
 
-export type PrimaryButtonSize = 'sm' | 'md' | 'lg';
+export type PrimaryButtonSize = 'sm' | 'md';
 export type PrimaryButtonVariant = 'default' | 'danger' | 'success';
 
 export type PrimaryButtonProps = Omit<BaseButtonProps, 'style'> & {
