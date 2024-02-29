@@ -75,7 +75,7 @@ export const Large: Story = {
   name: 'Size LG',
   ...SizeTemplate,
   args: {
-    // size: 'lg',
+    size: 'lg',
     children: 'Large',
   },
 };

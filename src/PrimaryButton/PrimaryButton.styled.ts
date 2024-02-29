@@ -24,7 +24,7 @@ const StyledPrimaryButton = styled(BaseButton)<PrimaryButtonProps>(({ size, vari
   return {
     color: colors.white,
     backgroundColor: colors[color][600],
-    transition: `all ${transitions.standard}`,
+    transition: `all ${transitions.defaultTransition}`,
 
     '&:hover:not(:focus):enabled': {
       color: colors.white,
@@ -50,13 +50,22 @@ const StyledPrimaryButton = styled(BaseButton)<PrimaryButtonProps>(({ size, vari
     ...(size === 'sm' && {
       minHeight: '32px',
       font: typography.body3,
+      fontWeight: 500,
       padding: `${spacings.sp1} ${spacings.sp2}`,
     }),
 
     ...(size === 'md' && {
       minHeight: '38px',
       font: typography.body2,
+      fontWeight: 500,
       padding: `${spacings.sp2} ${spacings.sp4}`,
+    }),
+
+    ...(size === 'lg' && {
+      minHeight: '44px',
+      font: typography.body1,
+      fontWeight: 500,
+      padding: `${spacings.sp3} ${spacings.sp6}`,
     }),
   };
 });
