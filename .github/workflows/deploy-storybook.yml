@@ -21,16 +21,10 @@ jobs:
     runs-on: ubuntu-latest
     # Job steps
     steps:
-      # Manual Checkout
-      - uses: actions/checkout@v3
-
-      # Set up Node
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18.x'
 
       - id: build-publish
-        uses: bitovi/github-actions-react-to-ghp@v1.2.0
+        uses: bitovi/github-actions-react-to-github-pages@v1.2.2
         with:
-          path: storybook-static
+          install_command: npm ci
           build_command: npm run build-storybook
+          path: storybook-static
