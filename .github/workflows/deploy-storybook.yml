@@ -19,14 +19,18 @@ jobs:
       name: github-pages
       url: ${{ steps.build-publish.outputs.page_url }}
     runs-on: ubuntu-latest
+    # Job steps
     steps:
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 18.x
+      # Manual Checkout
+      - uses: actions/checkout@v3
 
-      - id: build-publish
-        uses: bitovi/github-actions-react-to-ghp@v1.2.2
+      # Set up Node
+      - uses: actions/setup-node@v3
         with:
-          path: storybook-static
+          node-version: '18.x'
+
+      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.2
+        with:
+          install_command: npm ci
           build_command: npm run build-storybook
+          path: storybook-static
