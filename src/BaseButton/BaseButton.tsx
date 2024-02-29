@@ -15,7 +15,7 @@ const StyledBaseButton = styled.button<BaseButtonProps>(({ disabled }) => ({
   color: '#222',
   minWidth: '65px',
   minHeight: '32px',
-  borderRadius: '4px',
+  borderRadius: '8px',
   margin: 0,
   padding: '0 4px',
   appearance: 'none',
