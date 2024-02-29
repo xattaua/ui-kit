@@ -7,7 +7,7 @@ export type BaseButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   trailing?: ReactNode | null;
 };
 
-export const StyledBaseButton = styled.button<BaseButtonProps>(({ disabled }) => ({
+const StyledBaseButton = styled.button<BaseButtonProps>(({ disabled }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -20,10 +20,14 @@ export const StyledBaseButton = styled.button<BaseButtonProps>(({ disabled }) =>
   padding: '0 4px',
   appearance: 'none',
   userSelect: 'none',
-  ...(disabled && { cursor: 'not-allowed' }),
+  ...((disabled && { cursor: 'not-allowed' }) || { cursor: 'pointer' }),
+
+  '&:focus-visible': {
+    outline: 'none',
+  },
 }));
 
-export const BaseButton = ({
+const BaseButton = ({
   disabled = false,
   children,
   leading,
@@ -43,3 +47,5 @@ export const BaseButton = ({
 );
 
 BaseButton.displayName = 'BaseButton';
+
+export { BaseButton };
