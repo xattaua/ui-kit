@@ -19,8 +19,13 @@ jobs:
       name: github-pages
       url: ${{ steps.build-publish.outputs.page_url }}
     runs-on: ubuntu-latest
+    # Job steps
     steps:
-      - uses: actions/setup-node@v2
+      # Manual Checkout
+      - uses: actions/checkout@v3
+
+      # Set up Node
+      - uses: actions/setup-node@v3
         with:
           node-version: '18.x'
 
