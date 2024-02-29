@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export type BaseButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   leading?: ReactNode | null;
-  children?: ReactNode;
+  children?: ReactNode | null;
   trailing?: ReactNode | null;
 };
 
