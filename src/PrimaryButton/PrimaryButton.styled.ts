@@ -8,7 +8,7 @@ import { colors, transitions, typography, spacings } from 'styles';
 const getVariant = (variant: PrimaryButtonProps['variant']) => {
   switch (variant) {
     case 'default':
-      return 'gray';
+      return 'purple';
     case 'danger':
       return 'red';
     case 'success':
