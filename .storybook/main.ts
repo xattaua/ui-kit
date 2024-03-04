@@ -1,5 +1,6 @@
 /** @type { import('@storybook/react-webpack5').StorybookConfig } */
 import type { StorybookConfig } from '@storybook/react-webpack5';
+import path from 'path';
 import StylexPlugin from '@stylexjs/webpack-plugin';
 
 module.exports = {
@@ -42,10 +43,20 @@ module.exports = {
   webpackFinal: async (config) => {
     config.resolve.modules.push('node_modules', 'src', '.storybook');
 
+    config.module.rules.push({
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: 'babel-loader',
+    });
+
     config.plugins.push(
       new StylexPlugin({
-        filename: 'styles.[contenthash].css',
+        filename: 'styles.css',
         dev: config.mode === 'development',
+        unstable_moduleResolution: {
+          type: 'commonJS',
+          rootDir: __dirname,
+        },
       })
     );
 
