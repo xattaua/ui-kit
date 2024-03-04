@@ -5,7 +5,7 @@ module.exports = {
     browser: true,
   },
   parser: '@typescript-eslint/parser',
-  plugins: ['react', 'prettier', 'react-hooks', '@typescript-eslint'],
+  plugins: ['react', 'prettier', 'react-hooks', '@typescript-eslint', '@stylexjs'],
   extends: [
     'airbnb',
     'prettier',
@@ -66,17 +66,20 @@ module.exports = {
     'max-len': [
       'error',
       {
-        code: 100,
+        code: 120,
       },
     ],
     'react/jsx-wrap-multilines': 0,
     'implicit-arrow-linebreak': 0,
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': 'warn',
+    '@stylexjs/valid-styles': 'error',
     'prettier/prettier': [
       'error',
       {
         trailingComma: 'es5',
         tabWidth: 2,
-        printWidth: 100,
+        printWidth: 120,
         semi: true,
         useTabs: false,
         singleQuote: true,
