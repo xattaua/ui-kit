@@ -36,7 +36,6 @@
     "@storybook/react": "^7.6.17",
     "@storybook/react-webpack5": "^7.6.17",
     "@storybook/test": "^7.6.17",
-    "@stylexjs/babel-plugin": "^0.5.1",
     "@stylexjs/eslint-plugin": "^0.5.1",
     "@stylexjs/webpack-plugin": "^0.5.1",
     "@types/react": "^17.0.37",
