@@ -44,6 +44,7 @@ module.exports = {
 
     config.plugins.push(
       new StylexPlugin({
+        filename: 'styles.[contenthash].css',
         // get webpack mode and set value for dev
         dev: config.mode === 'development',
         // Required for CSS variable support
