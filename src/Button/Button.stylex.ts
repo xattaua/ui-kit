@@ -6,12 +6,13 @@ import { spacings } from 'tokens/spacings.stylex';
 import { typography } from 'tokens/typography.stylex';
 
 export const styles = stylex.create({
-  base: {
+  btn: {
     minWidth: '65px',
     minHeight: '32px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    position: 'relative',
     margin: 0,
     padding: '0 4px',
     color: colors.black,
@@ -320,21 +321,21 @@ export const styles = stylex.create({
   },
 
   'btn-size--sm': {
-    minHeight: '32px',
+    minHeight: '36px',
     fontSize: typography.fsBody3,
     lineHeight: typography.lhBody3,
     fontWeight: typography.fwMedium,
     fontFamily: typography.fontFamily,
-    padding: `${spacings['1x']} ${spacings['2x']}`,
+    padding: `${spacings['3x']} ${spacings['6x']}`,
   },
 
   'btn-size--md': {
-    minHeight: '32px',
+    minHeight: '40px',
     fontSize: typography.fsBody2,
     lineHeight: typography.lhBody2,
     fontWeight: typography.fwMedium,
     fontFamily: typography.fontFamily,
-    padding: `${spacings['2x']} ${spacings['4x']}`,
+    padding: `${spacings['4x']} ${spacings['7x']}`,
   },
 
   'btn-size--lg': {
@@ -343,10 +344,60 @@ export const styles = stylex.create({
     lineHeight: typography.lhBody1,
     fontWeight: typography.fwMedium,
     fontFamily: typography.fontFamily,
-    padding: `${spacings['2x']} ${spacings['5x']}`,
+    padding: `${spacings['4x']} ${spacings['8x']}`,
   },
 
-  'btn-w--full': {
+  'btn--fullWidth': {
     minWidth: '100%',
+  },
+
+  'btn-icon--sm': {
+    padding: '0',
+    width: '36px',
+    height: '36px',
+    minWidth: 'auto',
+  },
+
+  'btn-icon--md': {
+    padding: '0',
+    width: '40px',
+    height: '40px',
+    minWidth: 'auto',
+  },
+
+  'btn-icon--lg': {
+    padding: '0',
+    width: '44px',
+    height: '44px',
+    minWidth: 'auto',
+  },
+
+  'btn-box': {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  'btn-box--sm': {
+    width: '20px',
+    height: '20px',
+  },
+
+  'btn-box--md': {
+    width: '20px',
+    height: '20px',
+  },
+
+  'btn-box--lg': {
+    width: '20px',
+    height: '20px',
+  },
+
+  leading: {
+    marginRight: spacings['3x'],
+  },
+
+  trailing: {
+    marginLeft: spacings['3x'],
   },
 });

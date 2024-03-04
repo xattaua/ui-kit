@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from './Button';
@@ -10,6 +11,8 @@ const meta: Meta<typeof Button> = {
 
 export default meta;
 type Story = StoryObj<typeof Button>;
+
+const Icon = () => <span>🚀</span>;
 
 export const Default: Story = {
   args: {
@@ -175,5 +178,37 @@ export const FullWidth: Story = {
   },
   parameters: {
     layout: 'default',
+  },
+};
+
+export const Leading: Story = {
+  name: 'With leading',
+  args: {
+    leading: '🚀',
+    children: 'Leading',
+  },
+};
+
+export const Trailing: Story = {
+  name: 'With trailing',
+  args: {
+    trailing: '🚀',
+    children: 'Trailing',
+  },
+};
+
+export const LeadingAndTrailing: Story = {
+  name: 'With leading and trailing',
+  args: {
+    leading: '🚀',
+    trailing: '🚀',
+    children: 'Leading and trailing',
+  },
+};
+
+export const WithIcon: Story = {
+  name: 'With icon',
+  args: {
+    icon: <Icon />,
   },
 };

@@ -26,6 +26,7 @@ module.exports = {
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
     radix: 0,
+    'react/button-has-type': 'off',
     'react/prop-types': 'off',
     'no-console': 0,
     'comma-dangle': 0,

@@ -1,32 +1,51 @@
 import React, { ButtonHTMLAttributes, ReactElement, ReactNode } from 'react';
-import * as stylex from '@stylexjs/stylex';
+import { props as sxProps } from '@stylexjs/stylex';
 
 import { styles } from './Button.stylex';
 
 type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'tertiary';
 type ButtonColor = 'default' | 'danger' | 'success' | 'neutral';
+type ButtonSize = 'sm' | 'md' | 'lg';
 
 type BaseButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  size?: 'sm' | 'md' | 'lg';
   variant?: ButtonVariant;
   color?: ButtonColor;
+  size?: ButtonSize;
+  icon?: ReactElement | null;
   leading?: ReactNode | null;
-  children?: ReactNode | null; // TODO: add required when leading and trailing are null
+  children?: ReactNode | null;
   trailing?: ReactNode | null;
   fullWidth?: boolean;
 };
 
-type ButtonWithoutNeutral = {
-  variant: 'primary';
-  color: 'default' | 'danger' | 'success';
+type ButtonWithoutNeutralProps = {
+  variant?: Extract<ButtonVariant, 'primary'>;
+  color?: Exclude<ButtonColor, 'neutral'>;
 } & BaseButtonProps;
 
-type ButtonWithNeutral = {
-  variant: 'secondary' | 'tertiary' | 'outline';
-  color: 'default' | 'danger' | 'success' | 'neutral';
+type ButtonWithNeutralProps = {
+  variant?: Exclude<ButtonVariant, 'primary'>;
+  color?: ButtonColor;
 } & BaseButtonProps;
 
-export type SelectedModeProps = ButtonWithoutNeutral | ButtonWithNeutral;
+type ButtonWithIconProps = {
+  icon: ReactElement;
+  children?: never;
+  leading?: never;
+  trailing?: never;
+} & BaseButtonProps;
+
+type ButtonWithoutIconProps = {
+  icon?: never;
+  leading?: ReactNode | null;
+  children: ReactNode | null;
+  trailing?: ReactNode | null;
+} & BaseButtonProps;
+
+type ButtonConditionalAppearanceProps = ButtonWithoutNeutralProps | ButtonWithNeutralProps;
+type ButtonConditionalIconProps = ButtonWithIconProps | ButtonWithoutIconProps;
+
+export type SelectedModeProps = ButtonConditionalAppearanceProps & ButtonConditionalIconProps;
 
 const Button = ({
   variant = 'primary',
@@ -36,25 +55,32 @@ const Button = ({
   disabled = false,
   fullWidth = false,
   children,
+  icon = null,
+  leading = null,
+  trailing = null,
   ...props
 }: SelectedModeProps): ReactElement => {
-  console.log(1);
+  const iconStyles = [styles['btn-box'], styles[`btn-box--${size}`], styles[`icon-size--${size}`]];
+  const leadingStyles = [styles['btn-box'], styles[`btn-box--${size}`], styles.leading];
+  const trailingStyles = [styles['btn-box'], styles[`btn-box--${size}`], styles.trailing];
 
   return (
     <button
-      /* eslint-disable-next-line react/button-has-type */
       type={type}
       disabled={disabled}
       {...(disabled && { 'aria-disabled': true })}
-      {...stylex.props([
-        styles.base,
+      {...sxProps([
+        styles.btn,
         styles[`btn-size--${size}`],
         styles[`btn-${variant}--${color}`],
-        fullWidth && styles['btn-w--full'],
+        icon && styles[`btn-icon--${size}`],
+        fullWidth && styles['btn--fullWidth'],
       ])}
       {...props}
     >
-      {children}
+      {leading && <span {...sxProps([...leadingStyles])}>{leading}</span>}
+      {children || <span {...sxProps([...iconStyles])}>{icon}</span>}
+      {trailing && <span {...sxProps(...trailingStyles)}>{trailing}</span>}
     </button>
   );
 };
