@@ -1,6 +1,4 @@
-import * as stylex from '@stylexjs/stylex';
-
-export const spacings = stylex.defineVars({
+export const spacings = {
   '1x': '4px' as const,
   '2x': '6px' as const,
   '3x': '8px' as const,
@@ -20,4 +18,4 @@ export const spacings = stylex.defineVars({
   '17x': '36px' as const,
   '18x': '38px' as const,
   '19x': '40px' as const,
-});
+};

@@ -1,6 +1,4 @@
-import * as stylex from '@stylexjs/stylex';
-
-export const typography = stylex.defineVars({
+export const typography = {
   fontFamily: 'Inter, Arial, Helvetica, sans-serif' as const,
 
   h1: '22px' as const,
@@ -27,6 +25,4 @@ export const typography = stylex.defineVars({
   fsBody3: '14px' as const,
   fsBody4: '12px' as const,
   caption: '12px' as const,
-});
-
-// const fontFamily = 'Inter, Arial, Helvetica, sans-serif' as const;
+};
