@@ -5,7 +5,7 @@ module.exports = {
     browser: true,
   },
   parser: '@typescript-eslint/parser',
-  plugins: ['react', 'prettier', 'react-hooks', '@typescript-eslint', '@stylexjs'],
+  plugins: ['react', 'prettier', 'react-hooks', '@typescript-eslint'],
   extends: [
     'airbnb',
     'prettier',
@@ -74,7 +74,6 @@ module.exports = {
     'implicit-arrow-linebreak': 0,
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': 'warn',
-    '@stylexjs/valid-styles': 'error',
     'prettier/prettier': [
       'error',
       {
